@@ -1,0 +1,9 @@
+<button routerLink="home">home</button>
+<button routerLink="profile">profile</button>
+@if (authSignal()) {
+  <button (click)="authService.logout({ logoutParams: { returnTo: document.location.origin } })">
+    Log out
+  </button>
+} @else {
+  <button (click)="authService.loginWithRedirect()">Log in</button>
+}

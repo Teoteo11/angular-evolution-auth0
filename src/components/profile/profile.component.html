@@ -1,1 +1,4 @@
-<p>profile works!</p>
+@if (getUser()) {
+  <h1>Profile Data</h1>
+  <pre>{{ getUser() | json }}</pre>
+}
